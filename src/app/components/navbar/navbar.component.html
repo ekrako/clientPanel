@@ -25,7 +25,7 @@
         <li class="nav-item" *ngIf="!isLoggedIn&&showRegister">
           <a class="nav-link" routerLink="/register">Register</a>
         </li>
-        <li class="nav-item" *ngIf="!isLoggedIn">
+        <li class="nav-item" *ngIf="!isLoggedIn&&showRegister">
           <a class="nav-link" routerLink="/login">Login</a>
         </li>
       </ul>
