@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-md-6">
+    <a routerLink="/" href="#" class="btn btn-link"><i class="fa fa-arrow-circle-o-left"></i> Back to Dashboard</a>
+  </div>
+</div>
+<hr>
+<div class="card" *ngIf="settings">
+  <h3 class="card-header">
+    Edit Settings
+  </h3>
+  <div class="card-block">
+    <form (submit)="onSubmit()">
+      <div class="form-group">
+        <label for="showRegister">Allow Registartion: </label>
+        <input type="checkbox" [(ngModel)]="settings.showRegister" name="showRegister"  required>
+      </div>
+      <div class="form-group">
+        <label for="disableBalanceOnAdd">Disable set balance when adding a client: </label>
+        <input type="checkbox" [(ngModel)]="settings.disableBalanceOnAdd" name="disableBalanceOnAdd"  required>
+      </div>
+      <div class="form-group">
+        <label for="disableBalanceOnEdit">Disable to set balance when editing a client: </label>
+        <input type="checkbox" [(ngModel)]="settings.disableBalanceOnEdit" name="disableBalanceOnEdit"  required>
+      </div>
+      <input type="submit" class="btn btn-primary btn-block" value="submit">
+    </form>
+  </div>
+</div>
