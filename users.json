@@ -1,0 +1,29 @@
+{"users": [
+{
+  "localId": "8bSYXfm5uDb4AlxsdiqOIydNoxr2",
+  "email": "ekrako@gmail.com",
+  "emailVerified": true,
+  "displayName": "Eran Krakovsky",
+  "photoUrl": "https://lh3.googleusercontent.com/-9ZydsgrVmGc/AAAAAAAAAAI/AAAAAAAA4kU/RCvT9TnAhf4/photo.jpg",
+  "lastSignedInAt": "1507414830000",
+  "createdAt": "1507414740000",
+  "providerUserInfo": [
+    {
+      "providerId": "google.com",
+      "rawId": "117849182304851165028",
+      "email": "ekrako@gmail.com",
+      "displayName": "Eran Krakovsky",
+      "photoUrl": "https://lh3.googleusercontent.com/-9ZydsgrVmGc/AAAAAAAAAAI/AAAAAAAA4kU/RCvT9TnAhf4/photo.jpg"
+    }
+  ]
+},
+{
+  "localId": "sKSzVHl8DVXokvZvaptYRqO9Ooj2",
+  "email": "example@railstutorial.org",
+  "emailVerified": false,
+  "passwordHash": "NKv420mflbfIuMeMiJLlNpc88/F8RCE4qOcffPLR3WjcoQsADMVCkpbIdZSpSPsHyCQkDLC/xvSjYSU75869Gg==",
+  "salt": "SnVQtjgHJCpYrw==",
+  "lastSignedInAt": "1507414569000",
+  "createdAt": "1507401616000",
+  "providerUserInfo": []
+}]}

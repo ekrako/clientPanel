@@ -1,35 +1,16 @@
-<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-  <div class="container">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    <a class="navbar-brand" href="#">ClientPanel</a>
 
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item" *ngIf="isLoggedIn">
-          <a class="nav-link" routerLink="/">Dashboard</a>
-        </li>
-      </ul>
+<mat-toolbar>
 
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item" *ngIf="isLoggedIn">
-          <a class="nav-link" routerLink="/">{{loggedInUser}}</a>
-        </li>
-        <li class="nav-item" *ngIf="isLoggedIn">
-          <a class="nav-link" routerLink="/settings">Settings</a>
-        </li>
-        <li class="nav-item" *ngIf="isLoggedIn">
-          <a class="nav-link" (click)="onLogoutClick()">Logout</a>
-        </li>
-        <li class="nav-item" *ngIf="!isLoggedIn&&showRegister">
-          <a class="nav-link" routerLink="/register">Register</a>
-        </li>
-        <li class="nav-item" *ngIf="!isLoggedIn&&showRegister">
-          <a class="nav-link" routerLink="/login">Login</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+  <a mat-icon-button *ngIf="isLoggedIn" routerLink="/"><img alt="Home" class="home-icon" title="Home" src="assets/img/logo.png"></a>ClientPanel
+  <span class="spacer"></span>
+  <button mat-icon-button [matMenuTriggerFor]="menu" [hidden]="menu.items.length == 0">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item *ngIf="isLoggedIn" routerLink="/settings">Settings</button>
+    <button mat-menu-item *ngIf="isLoggedIn" (click)="onLogoutClick()">Logout</button>
+    <button mat-menu-item *ngIf="!isLoggedIn&&showRegister" routerLink="/register">Register</button>
+    <button mat-menu-item *ngIf="!isLoggedIn&&showRegister" routerLink="/login">Login</button>
+  </mat-menu>
+</mat-toolbar>
 <br><br>

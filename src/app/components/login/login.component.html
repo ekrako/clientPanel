@@ -13,10 +13,17 @@
             <label for="password">Password</label>
             <input type="password" [(ngModel)]="password" name="password" class="form-control" required>
           </div>
-          <input type="submit" class="btn btn-primary btn-block" value=
-          "submit">
+          <input type="submit" class="btn btn-primary btn-block" value="submit">
         </form>
       </div>
+      <div class="container">
+        <a (click)="loginWithGoogle()" class="btn btn-secondary btn-block">
+          <h4>
+              <img class="img-responsive" style="max-height: 1.5em;" src="assets/img/google.svg" alt="Google logo">              Login With Google
+        </h4>
+        </a>
+      </div>
+      {{recaptchaVerifier}}
     </div>
   </div>
 </div>

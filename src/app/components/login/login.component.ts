@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import * as firebase from 'firebase/app'
 
 @Component({
   selector: 'app-login',
@@ -11,14 +12,16 @@ import { AuthService } from '../../services/auth.service';
 export class LoginComponent implements OnInit {
   email:string;
   password:string;
+  recaptchaVerifier:any;
+
   constructor(
     private authService: AuthService,
     private flashMessagesService: FlashMessagesService,
     private router: Router
   ) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
+
 
   onSubmit(){
     this.authService.login(this.email,this.password)
@@ -32,5 +35,26 @@ export class LoginComponent implements OnInit {
       });
 
   }
+  loginWithGoogle(){
+    this.authService.googleLogin().then((res)=>{
+      this.flashMessagesService.show('You are logged in',{cssClass:'alert-success',timeout:4000});
+      this.router.navigate(['/']);
+    })
+    .catch((err)=>{
+      this.flashMessagesService.show(err.message,{cssClass:'alert-danger',timeout:4000});
+      this.router.navigate(['/login']);
+    });
+  }
+  loginWithFacebook(){
+    this.authService.facebookLogin().then((res)=>{
+      this.flashMessagesService.show('You are logged in',{cssClass:'alert-success',timeout:4000});
+      this.router.navigate(['/']);
+    })
+    .catch((err)=>{
+      this.flashMessagesService.show(err.message,{cssClass:'alert-danger',timeout:4000});
+      this.router.navigate(['/login']);
+    });
+  }
+
 
 }

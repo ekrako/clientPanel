@@ -13,6 +13,12 @@ export class AuthService {
   login(username:string,password:string){
     return this.afAuth.auth.signInWithEmailAndPassword(username,password);
   }
+  googleLogin(){
+    return this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+  }
+  facebookLogin(){
+    return this.afAuth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider());
+  }
   logout(){
     return this.afAuth.auth.signOut();
   }

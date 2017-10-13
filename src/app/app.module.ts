@@ -29,15 +29,20 @@ import { AuthGuard } from './guards/auth.guard';
 import { RegisterGuard } from './guards/register.guard';
 import { SettingsService } from './services/settings.service'
 
+//material Design imports
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule, MatToolbarModule, MatIconModule, MatMenuModule } from '@angular/material';
+
+//Routes
 const appRoutes: Routes = [
   { path: '', component: DashboardComponent, canActivate: [AuthGuard] },
-  { path: 'register', component: RegisterComponent , canActivate: [RegisterGuard] },
+  { path: 'register', component: RegisterComponent, canActivate: [RegisterGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'settings', component: SettingsComponent, canActivate: [AuthGuard] },
   { path: 'add-client', component: AddClientComponent, canActivate: [AuthGuard] },
   { path: 'client/:id', component: ClientDetailsComponent, canActivate: [AuthGuard] },
   { path: 'client/:id/edit', component: EditClientComponent, canActivate: [AuthGuard] },
-  {path: '**',component:PageNotFoundComponent}
+  { path: '**', component: PageNotFoundComponent }
 
 ]
 
@@ -65,6 +70,11 @@ export const firebaseConfig = {
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatMenuModule,
     FlashMessagesModule,
     RouterModule.forRoot(appRoutes),
     AngularFireModule.initializeApp(firebaseConfig),
