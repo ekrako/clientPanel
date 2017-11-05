@@ -1,3 +1,22 @@
+<!-- <mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Shiba Inu</mat-card-title>
+    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="http://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <p>
+      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes
+      very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card> -->
+
 <div class="row">
   <div class="col-md-6 offset-md-3">
     <div class="card">
@@ -16,14 +35,17 @@
           <input type="submit" class="btn btn-primary btn-block" value="submit">
         </form>
       </div>
-      <div class="container">
+      <div class="card-block">
+        <a routerLink="/phone" class="btn btn-info btn-block"><i class="fa fa-phone"></i> Login with Phone</a>
+      </div>
+      <div class="card-block">
         <a (click)="loginWithGoogle()" class="btn btn-secondary btn-block">
-          <h4>
-              <img class="img-responsive" style="max-height: 1.5em;" src="assets/img/google.svg" alt="Google logo">              Login With Google
-        </h4>
+          <img class="img-responsive" style="max-height: 1.5em;" src="assets/img/google.svg" alt="Google logo"> Login With Google
         </a>
       </div>
-      {{recaptchaVerifier}}
+      <div class="card-block">
+        <a (click)="loginWithFacebook()" class="btn btn-primary btn-block"> <i class="fa fa-facebook"></i> Login With Facebook</a>
+      </div>
     </div>
   </div>
 </div>

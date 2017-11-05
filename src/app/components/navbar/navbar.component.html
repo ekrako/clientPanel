@@ -1,7 +1,7 @@
 
 <mat-toolbar>
 
-  <a mat-icon-button *ngIf="isLoggedIn" routerLink="/"><img alt="Home" class="home-icon" title="Home" src="assets/img/logo.png"></a>ClientPanel
+  <a mat-icon-button routerLink="/"><img alt="Home" class="home-icon" title="Home" src="assets/img/logo.png"></a>ClientPanel
   <span class="spacer"></span>
   <button mat-icon-button [matMenuTriggerFor]="menu" [hidden]="menu.items.length == 0">
     <mat-icon>more_vert</mat-icon>

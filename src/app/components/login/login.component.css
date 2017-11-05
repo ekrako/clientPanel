@@ -1,0 +1,19 @@
+
+.example-card {
+  width: 400px;
+}
+
+.example-header-image {
+  background-image: url('http://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+.login-card {
+  width: 400px;
+}
+.login-card img{
+  max-width: 100%;
+  align-self: center;
+  width: auto;
+  height: auto !important; /* needs to be important because md-card also sets it that way */
+}
